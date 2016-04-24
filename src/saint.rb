@@ -1,5 +1,5 @@
 class Saint
-  def self.parse(template, bindings)
+  def self.render(template, bindings)
     bindings.each do |b, v|
       if v.respond_to? :call then
         template.gsub!(/{{\s?#{b.to_s}\s?}}/, v.call.to_s)
